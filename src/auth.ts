@@ -3,12 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "./db/index";
 
-export const {
-  handlers: { GET, POST },
-  auth,
-  signIn,
-  signOut,
-} = NextAuth({
+export const {handlers: { GET, POST }, auth, signIn, signOut,} = NextAuth({
   adapter: DrizzleAdapter(db),
   providers: [
     GoogleProvider({
@@ -23,5 +18,10 @@ export const {
       }
       return session;
     },
+    async redirect({ baseUrl }) {
+      return `${baseUrl}/dashboard`;
+    },
   },
-});
+  
+  },
+);
