@@ -1,8 +1,8 @@
-The project that uses AI to generate quizzes.
+AI Quiz Generator that builds quizzes based on user configuration. Track user quiz participation and activity.
 
 
 
-## Tech Stack 
+Tech Stack 
 
 - Next-auth - Authentication
 - Shadcn ui - ui library
